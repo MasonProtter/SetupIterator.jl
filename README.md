@@ -18,7 +18,8 @@ of all the constituent vectors and check which sub-vector the current iteration 
 
 Wouldn't it be great if we could just do something akin to 
 ```julia
-Base.iterator(vov::VectorOfVectors) = Iterators.flatten(vov.v)
+# This is a wish, not something that actually works
+Base.iterator(vov::VectorOfVectors) = Iterators.flatten(vov.v) 
 ```
 and be done with it? 
 
