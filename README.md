@@ -17,7 +17,7 @@ a method for `Base.iterate` on this type is actually somewhat difficult, since y
 of all the constituent vectors and check which sub-vector the current iteration state corresponds to.
 
 Wouldn't it be great if we could just do something akin to 
-```
+```julia
 Base.iterator(vov::VectorOfVectors) = Iterators.flatten(vov.v)
 ```
 and be done with it? 
