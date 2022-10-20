@@ -16,8 +16,13 @@ and supose we want to treat this thing semantically like a flat vector, i.e. con
 a method for `Base.iterate` on this type is actually somewhat difficult, since you'll need to juggle the state
 of all the constituent vectors and check which sub-vector the current iteration state corresponds to.
 
-Wouldn't it be great if we could just do something akin to `Base.iterator(vov::VectorOfVectors) = Iterators.flatten(vov.v)`,
-and be done with it? Enter SetupIterator.jl:
+Wouldn't it be great if we could just do something akin to 
+```
+Base.iterator(vov::VectorOfVectors) = Iterators.flatten(vov.v)
+```
+and be done with it? 
+
+Enter SetupIterator.jl:
 ``` julia
 using SetupIterator
 SetupIterator.iterator(vov::VectorOfVectors) = Iterators.flatten(vov.v)
